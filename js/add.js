@@ -3,7 +3,11 @@ import { Task } from './task.js';
 
 export function add() {
   let text = document.querySelector('#text').value;
-  myComponents.push(new Task(myComponents.length + 1, text));
+  let twoWords = text.split('--');
+
+  myComponents.push(
+    new Task(myComponents.length + 1, twoWords[0], twoWords[1])
+  );
   document.querySelector('#text').value = '';
   listed();
 }
